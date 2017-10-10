@@ -2,11 +2,17 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
+import org.junit.rules.Timeout;
+import org.omg.CORBA.TIMEOUT;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import static org.junit.Assert.assertEquals;
 
@@ -24,12 +30,37 @@ public class Testsuite1_Categories extends Hooks {
     @Test
     public void categoryAkhila()
     {
-        driver.findElement(By.linkText("Categories")).click();
+        WebElement e2 = driver.findElement(By.linkText("Categories"));
+        //.click();
         waitFor();
         WebElement element=driver.findElement(By.cssSelector(".title"));
         String act=element.getText();
         String exp="All Categories";
         assertEquals(exp,act);
+
+        Actions a = new Actions(driver);
+        a.dragAndDrop(element,e2).perform();
+        a.contextClick();
+        a.doubleClick();
+
+        driver.switchTo().frame(1);
+        driver.switchTo().frame("menu");
+        //element of the frame using other locaators like xpath
+        WebElement frameElement = driver.findElement(By.xpath("/html/frameset/frameset/frame[2]"));
+        driver.switchTo().frame(frameElement);
+
+
+//        <li class="ui-menu-item" id="ui-id-24" tabindex="-1">Iphone 6+</li>
+
+        WebDriverWait w = new WebDriverWait(driver, 30);
+
+        w.until(ExpectedConditions.not(ExpectedConditions.presenceOfElementLocated(By.id("ui-id-24"))));
+
+
+
+        Assert.assertTrue(driver.findElement(By.id("main-frame-error")).isDisplayed());
+
+
     }
     @Test
     public void carsAkhila()

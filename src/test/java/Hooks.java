@@ -15,8 +15,6 @@ public class Hooks {
     }
 
 
-
-
     @BeforeClass
     public static  void openBrowser()
     {
@@ -27,7 +25,7 @@ public class Hooks {
         driver = new ChromeDriver();
         driver.get("http://jfi.bananaapps.co.uk/");//open
         //FOR SET TIME OUT
-        driver.manage().timeouts().implicitlyWait(30000, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 //
     }
 
