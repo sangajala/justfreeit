@@ -1,3 +1,5 @@
+package oldtests;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -9,14 +11,15 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import java.util.concurrent.TimeUnit;
 
 import org.junit.Assert;
+import utils.Hooks;
 
-public class TestSuite1  extends Hooks{
+public class TestSuite1  extends Hooks {
 
     //WebDriver driver;
    // @Before
     public void setup() {
         ////setup
-         driver.manage().window().fullscreen();
+         Hooks.driver.manage().window().fullscreen();
     }
 
    // @After
@@ -30,13 +33,13 @@ public class TestSuite1  extends Hooks{
     {
         System.out.println("I am in test case");
         ////-------test case ------
-        WebElement element = driver.findElement(By.linkText("Log In"));
+        WebElement element = Hooks.driver.findElement(By.linkText("Log In"));
         ////
         element.click();
         //STATIC WAIT FOR 2 SECS
         waitFor();
-        Assert.assertEquals("Welcome to Just Free It", driver.findElement(By.cssSelector("div.modal-header > h2")).getText());
-        WebElement close = driver.findElement(By.className("close"));
+        Assert.assertEquals("Welcome to Just Free It", Hooks.driver.findElement(By.cssSelector("div.modal-header > h2")).getText());
+        WebElement close = Hooks.driver.findElement(By.className("close"));
         close.click();
 
         //------------------------------test case end
@@ -47,12 +50,12 @@ public class TestSuite1  extends Hooks{
     {
         System.out.println("I am in test case 2");
         ////-------test case ------
-        WebElement element = driver.findElement(By.linkText("Post / Request Item"));
+        WebElement element = Hooks.driver.findElement(By.linkText("Post / Request Item"));
         ////
         element.click();
         //STATIC WAIT FOR 2 SECS
         waitFor();
-        WebElement message = driver.findElement(By.cssSelector("div.congratulations > h2"));
+        WebElement message = Hooks.driver.findElement(By.cssSelector("div.congratulations > h2"));
         String actualMessage = message.getText();
         String expectMessage = "Oops..!";
         Assert.assertEquals(expectMessage,actualMessage);
@@ -63,7 +66,7 @@ public class TestSuite1  extends Hooks{
     @Test
     public void facebookLink1()
     {
-        WebElement fb = driver.findElement(By.xpath("//i[@class='fa fa-facebook-official']"));
+        WebElement fb = Hooks.driver.findElement(By.xpath("//i[@class='fa fa-facebook-official']"));
         boolean presence = fb.isDisplayed();
         Assert.assertTrue(presence);
     }

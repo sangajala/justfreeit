@@ -1,23 +1,21 @@
-import org.omg.CORBA.TIMEOUT;
-import org.openqa.selenium.By;
-import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+package utils;
+
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import java.util.concurrent.TimeUnit;
+
 
 /**
  * Created by sriramangajala on 08/11/16.
  */
-public class WebDriverUtil {
+public class WebDriverUtil extends Hooks{
 
 
     public static boolean isTextPresent(String text) {
         try {
-            return BrowserFactory.getDriver().findElement(By.tagName("body")).getText().contains(text);
+            return driver.findElement(By.tagName("body")).getText().contains(text);
         }
         catch (Exception e)
         {
@@ -27,7 +25,7 @@ public class WebDriverUtil {
 
     public static boolean waitForText(String text) {
         int timeCounter=0;
-        while(!isTextPresent(text)&&AutomationConstants.MAX_TIMEOUTS>timeCounter)
+        while(!isTextPresent(text)&& AutomationConstants.MAX_TIMEOUTS>timeCounter)
         {
             try {
                 System.out.print("Waiting for 1 sec");
@@ -42,14 +40,14 @@ public class WebDriverUtil {
 
     public static void waitForElementToBeClickable(By by) {
         System.out.println("Waiting for element to be clickable " + by);
-        WebDriverWait webDriverWait = new WebDriverWait(BrowserFactory.getDriver(), AutomationConstants.MAX_TIMEOUTS);
+        WebDriverWait webDriverWait = new WebDriverWait(driver, AutomationConstants.MAX_TIMEOUTS);
         webDriverWait.until(ExpectedConditions.elementToBeClickable(by));
 
     }
 
     public static void waitForElementToBeClickableAndClick(By by) {
         waitForElementToBeClickable(by);
-        BrowserFactory.getDriver().findElement(by).click();
+        driver.findElement(by).click();
     }
 
     public static void sleep(int i) {
@@ -62,7 +60,7 @@ public class WebDriverUtil {
 
     public static void mouseHover(WebElement webElement)
     {
-        Actions action = new Actions(BrowserFactory.getDriver());
+        Actions action = new Actions(driver);
       //  action.moveToElement(webElement).perform();
         action.moveToElement(webElement).click().perform();
 
@@ -70,18 +68,27 @@ public class WebDriverUtil {
 
     public static void gotoViewCourses(String courseName)
     {
-        for(WebElement element:BrowserFactory.getDriver().findElements(By.className("skill_section")))
+        for(WebElement element: driver.findElements(By.className("skill_section")))
         {
             if(element.getText().contains(courseName))
             {
 
-                BrowserFactory.getDriver().get(element.findElement(By.tagName("a")).getAttribute("href"));
+                driver.get(element.findElement(By.tagName("a")).getAttribute("href"));
                 return;
             }
         }
     }
 
     public static void selectByLinkText(By by){
-        BrowserFactory.getDriver().findElement(by).click();
+        driver.findElement(by).click();
+    }
+
+    public static void setOurOwnScreenSize(String screenSize) {
+        if(screenSize.equals("maximum"))
+            driver.manage().window().maximize();
+        else if (screenSize.equals("fullscreen"))
+            driver.manage().window().fullscreen();
+        else if(screenSize.equals("mobile"))
+            driver.manage().window().setSize(new Dimension(1024, 768));
     }
 }

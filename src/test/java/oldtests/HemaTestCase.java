@@ -1,7 +1,10 @@
+package oldtests;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import utils.Hooks;
 
-public class HemaTestCase extends Hooks{
+public class HemaTestCase extends Hooks {
 
     public static void main(String[] args) {
         System.setProperty("webdriver.firefox.marionette", "C:\\geckodriver.exe");

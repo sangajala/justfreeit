@@ -5,12 +5,13 @@ Feature:User can browse item through Categories
     When User clicks Categories
     Then User should view all the sub-categories
 
+    @SRIRAM1
   Scenario:User can browse Cars from Cars& Vehicles sub-category
-    Given User is on home page Just-freeit
-    When User Clicks Categories
-    And User Clicks Cars&Vehicles
-    And User Clicks Cars
-    And User Clicks on the location of selected item
+    Given User is on the home page
+    When he clicks on "Categories" link
+    And he clicks on "Cars & Vehicles" link
+    And he clicks on "Cars" link
+    And he select the first item's location
     Then User should view the location of the selelcted item
 
   Scenario:User can browse commercial vehicles from Cars& Vehicles in sub-category

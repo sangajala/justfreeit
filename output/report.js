@@ -1,301 +1,60 @@
-$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Deva.feature");
+$(document).ready(function() {var formatter = new CucumberHTML.DOMFormatter($('.cucumber-report'));formatter.uri("Categories.feature");
 formatter.feature({
   "line": 1,
-  "name": "Check that homepage have all expected feature",
+  "name": "User can browse item through Categories",
   "description": "",
-  "id": "check-that-homepage-have-all-expected-feature",
+  "id": "user-can-browse-item-through-categories",
   "keyword": "Feature"
 });
-formatter.scenarioOutline({
-  "comments": [
-    {
-      "line": 3,
-      "value": "#  Background:"
-    },
-    {
-      "line": 4,
-      "value": "#    Given User is on the home page"
-    }
-  ],
-  "line": 7,
-  "name": "Major links are visible",
+formatter.scenario({
+  "line": 9,
+  "name": "User can browse Cars from Cars\u0026 Vehicles sub-category",
   "description": "",
-  "id": "check-that-homepage-have-all-expected-feature;major-links-are-visible",
-  "type": "scenario_outline",
-  "keyword": "Scenario Outline",
+  "id": "user-can-browse-item-through-categories;user-can-browse-cars-from-cars\u0026-vehicles-sub-category",
+  "type": "scenario",
+  "keyword": "Scenario",
   "tags": [
     {
-      "line": 6,
-      "name": "@SRIRAM"
+      "line": 8,
+      "name": "@SRIRAM1"
     }
   ]
 });
 formatter.step({
-  "line": 9,
+  "line": 10,
   "name": "User is on the home page",
   "keyword": "Given "
-});
-formatter.step({
-  "line": 10,
-  "name": "he clicks on \"\u003ccol\u003e\" link",
-  "keyword": "When "
 });
 formatter.step({
   "line": 11,
-  "name": "he should be landed on page with text \"\u003cText\u003e\"",
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 12,
-  "name": "user navigates back",
-  "keyword": "When "
-});
-formatter.examples({
-  "line": 14,
-  "name": "",
-  "description": "",
-  "id": "check-that-homepage-have-all-expected-feature;major-links-are-visible;",
-  "rows": [
-    {
-      "cells": [
-        "col",
-        "Text"
-      ],
-      "line": 16,
-      "id": "check-that-homepage-have-all-expected-feature;major-links-are-visible;;1"
-    },
-    {
-      "cells": [
-        "About Us",
-        "Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do"
-      ],
-      "line": 17,
-      "id": "check-that-homepage-have-all-expected-feature;major-links-are-visible;;2"
-    },
-    {
-      "cells": [
-        "Contact Us",
-        "Send Us Your Feedback"
-      ],
-      "line": 18,
-      "id": "check-that-homepage-have-all-expected-feature;major-links-are-visible;;3"
-    },
-    {
-      "cells": [
-        "Categories",
-        "Recent Adds"
-      ],
-      "line": 19,
-      "id": "check-that-homepage-have-all-expected-feature;major-links-are-visible;;4"
-    }
-  ],
-  "keyword": "Examples"
-});
-formatter.scenario({
-  "line": 17,
-  "name": "Major links are visible",
-  "description": "",
-  "id": "check-that-homepage-have-all-expected-feature;major-links-are-visible;;2",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 6,
-      "name": "@SRIRAM"
-    }
-  ]
-});
-formatter.step({
-  "line": 9,
-  "name": "User is on the home page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 10,
-  "name": "he clicks on \"About Us\" link",
-  "matchedColumns": [
-    0
-  ],
-  "keyword": "When "
-});
-formatter.step({
-  "line": 11,
-  "name": "he should be landed on page with text \"Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do\"",
-  "matchedColumns": [
-    1
-  ],
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 12,
-  "name": "user navigates back",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "Stepdefs.userIsOnTheHomePage()"
-});
-formatter.result({
-  "duration": 495977076,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "About Us",
-      "offset": 14
-    }
-  ],
-  "location": "Stepdefs.heClicksOnLink(String)"
-});
-formatter.result({
-  "duration": 6376993244,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do",
-      "offset": 39
-    }
-  ],
-  "location": "Stepdefs.heShouldBeLandedOnPageWithText(String)"
-});
-formatter.result({
-  "duration": 238631966,
-  "status": "passed"
-});
-formatter.match({
-  "location": "Stepdefs.userNavigatesBack()"
-});
-formatter.result({
-  "duration": 458762792,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 18,
-  "name": "Major links are visible",
-  "description": "",
-  "id": "check-that-homepage-have-all-expected-feature;major-links-are-visible;;3",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 6,
-      "name": "@SRIRAM"
-    }
-  ]
-});
-formatter.step({
-  "line": 9,
-  "name": "User is on the home page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 10,
-  "name": "he clicks on \"Contact Us\" link",
-  "matchedColumns": [
-    0
-  ],
-  "keyword": "When "
-});
-formatter.step({
-  "line": 11,
-  "name": "he should be landed on page with text \"Send Us Your Feedback\"",
-  "matchedColumns": [
-    1
-  ],
-  "keyword": "Then "
-});
-formatter.step({
-  "line": 12,
-  "name": "user navigates back",
-  "keyword": "When "
-});
-formatter.match({
-  "location": "Stepdefs.userIsOnTheHomePage()"
-});
-formatter.result({
-  "duration": 442709757,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Contact Us",
-      "offset": 14
-    }
-  ],
-  "location": "Stepdefs.heClicksOnLink(String)"
-});
-formatter.result({
-  "duration": 558247508,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Send Us Your Feedback",
-      "offset": 39
-    }
-  ],
-  "location": "Stepdefs.heShouldBeLandedOnPageWithText(String)"
-});
-formatter.result({
-  "duration": 170613277,
-  "status": "passed"
-});
-formatter.match({
-  "location": "Stepdefs.userNavigatesBack()"
-});
-formatter.result({
-  "duration": 295267961,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 19,
-  "name": "Major links are visible",
-  "description": "",
-  "id": "check-that-homepage-have-all-expected-feature;major-links-are-visible;;4",
-  "type": "scenario",
-  "keyword": "Scenario Outline",
-  "tags": [
-    {
-      "line": 6,
-      "name": "@SRIRAM"
-    }
-  ]
-});
-formatter.step({
-  "line": 9,
-  "name": "User is on the home page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 10,
   "name": "he clicks on \"Categories\" link",
-  "matchedColumns": [
-    0
-  ],
   "keyword": "When "
-});
-formatter.step({
-  "line": 11,
-  "name": "he should be landed on page with text \"Recent Adds\"",
-  "matchedColumns": [
-    1
-  ],
-  "keyword": "Then "
 });
 formatter.step({
   "line": 12,
-  "name": "user navigates back",
-  "keyword": "When "
+  "name": "he clicks on \"Cars \u0026 Vehicles\" link",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 13,
+  "name": "he clicks on \"Cars\" link",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 14,
+  "name": "he select the first item\u0027s location",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 15,
+  "name": "User should view the location of the selelcted item",
+  "keyword": "Then "
 });
 formatter.match({
   "location": "Stepdefs.userIsOnTheHomePage()"
 });
 formatter.result({
-  "duration": 450560484,
+  "duration": 329940457,
   "status": "passed"
 });
 formatter.match({
@@ -308,27 +67,47 @@ formatter.match({
   "location": "Stepdefs.heClicksOnLink(String)"
 });
 formatter.result({
-  "duration": 823556058,
+  "duration": 687079634,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "Recent Adds",
-      "offset": 39
+      "val": "Cars \u0026 Vehicles",
+      "offset": 14
     }
   ],
-  "location": "Stepdefs.heShouldBeLandedOnPageWithText(String)"
+  "location": "Stepdefs.heClicksOnLink(String)"
 });
 formatter.result({
-  "duration": 190012396,
+  "duration": 1155662274,
   "status": "passed"
 });
 formatter.match({
-  "location": "Stepdefs.userNavigatesBack()"
+  "arguments": [
+    {
+      "val": "Cars",
+      "offset": 14
+    }
+  ],
+  "location": "Stepdefs.heClicksOnLink(String)"
 });
 formatter.result({
-  "duration": 339950398,
+  "duration": 425412048,
+  "status": "passed"
+});
+formatter.match({
+  "location": "Stepdefs.heSelectTheFirstItemSLocation()"
+});
+formatter.result({
+  "duration": 151809509,
+  "status": "passed"
+});
+formatter.match({
+  "location": "Stepdefs.userShouldViewTheLocationOfTheSelelctedItem()"
+});
+formatter.result({
+  "duration": 181095041,
   "status": "passed"
 });
 });

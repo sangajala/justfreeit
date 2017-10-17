@@ -1,10 +1,13 @@
+package oldtests;
+
+import oldtests.TestSuite1;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import utils.Hooks;
 
-public class TestSuite2 extends Hooks{
+public class TestSuite2 extends Hooks {
     //WebDriver driver;
     @Before
     public void shutup()
@@ -13,8 +16,8 @@ public class TestSuite2 extends Hooks{
         System.setProperty("webdriver.gecko.driver", "geckodriver");
         System.setProperty("webdriver.chrome.driver", "chromedriver");
 
-        driver = new ChromeDriver();
-        driver.get("http://www.google.co.uk/");//open
+        Hooks.driver = new ChromeDriver();
+        Hooks.driver.get("http://www.google.co.uk/");//open
     }
     @Test
     public void testcase1()
@@ -25,6 +28,6 @@ public class TestSuite2 extends Hooks{
     @After
     public void stoping()
     {
-        driver.quit();
+        Hooks.driver.quit();
     }
 }
