@@ -4,14 +4,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 public class HomePage extends basePage {
 
 
 
 
-//    @FindBy(id = "tag")
-//    private WebElement searchBar;
+    @FindBy(xpath = "//img[@alt='Logo']")
+    private WebElement logo;
 
 
 //    -------------locators------------------------------
@@ -21,6 +22,9 @@ public class HomePage extends basePage {
     private String links;
     private String LogoutButton;
 
+    public HomePage() {
+        PageFactory.initElements(driver, this);
+    }
 
 
 //    ---actoins ---------------------
@@ -52,5 +56,9 @@ public class HomePage extends basePage {
     public void clickOnPage(String linkName) {
         System.out.println("Printing for gurpreet:"+linkName);
         driver.findElement(new By.ByPartialLinkText(linkName)).click();
+    }
+
+    public void gotohomepage() {
+        logo.click();
     }
 }

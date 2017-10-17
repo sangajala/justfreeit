@@ -18,6 +18,7 @@ public class Stepdefs extends Hooks {
     @Given("^User is on the home page$")
     public void userIsOnTheHomePage() throws Throwable {
         homePage = new HomePage();
+        homePage.gotohomepage();
         Assert.assertTrue(homePage.isUserInHomePage());
 
     }

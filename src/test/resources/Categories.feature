@@ -5,7 +5,7 @@ Feature:User can browse item through Categories
     When User clicks Categories
     Then User should view all the sub-categories
 
-    @SRIRAM1
+    @SRIRAM
   Scenario:User can browse Cars from Cars& Vehicles sub-category
     Given User is on the home page
     When he clicks on "Categories" link
